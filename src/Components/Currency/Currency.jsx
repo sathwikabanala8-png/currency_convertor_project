@@ -19,7 +19,7 @@ const SYMBOL_BY_CODE = CURRENCY_OPTIONS.reduce((acc, currency) => {
   return acc;
 }, {});
 
-function Currency() {
+function Currency({ onLogout }) {
   const [amount, setAmount] = useState("1");
   const [fromCurrency, setFromCurrency] = useState("USD");
   const [toCurrency, setToCurrency] = useState("INR");
@@ -186,14 +186,21 @@ function Currency() {
       <div className="currency-card">
         <div className="top-bar">
           <h1>Currency Converter</h1>
-          <label className="toggle">
-            <input
-              type="checkbox"
-              checked={darkMode}
-              onChange={(e) => setDarkMode(e.target.checked)}
-            />
-            <span>{darkMode ? "Dark" : "Light"} Mode</span>
-          </label>
+          <div className="top-bar-actions">
+            <label className="toggle">
+              <input
+                type="checkbox"
+                checked={darkMode}
+                onChange={(e) => setDarkMode(e.target.checked)}
+              />
+              <span>{darkMode ? "Dark" : "Light"} Mode</span>
+            </label>
+            {onLogout && (
+              <button className="logout-btn" type="button" onClick={onLogout}>
+                Logout
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="page-switch">

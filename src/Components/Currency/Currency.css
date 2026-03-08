@@ -31,6 +31,12 @@
   margin-bottom: 8px;
 }
 
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .currency-card h1 {
   margin: 0;
   font-size: 1.8rem;
@@ -53,6 +59,30 @@
 .dark-mode .toggle,
 .dark-mode .auto-convert {
   color: #bdd2e7;
+}
+
+.logout-btn {
+  border: 1px solid #bfd2e1;
+  border-radius: 8px;
+  background: #eef5fb;
+  color: #1e3e5b;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #deebf6;
+}
+
+.dark-mode .logout-btn {
+  background: #23374d;
+  color: #d8e7f6;
+  border-color: #3f5873;
+}
+
+.dark-mode .logout-btn:hover {
+  background: #2b4460;
 }
 
 .page-switch {
@@ -376,6 +406,11 @@
   .top-bar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .top-bar-actions {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .currency-card h1 {
